@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import { Login } from "./components/Login";
 import { ProjectList } from "./components/ProjectList";
 import { Project } from "./components/Project";
+import { TaskList } from "./components/TaskList";
+
 import { Header } from "./components/Header";
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
         />
         <Route path="/projects" element={<ProjectList />} />
         <Route path="/projects/:projectID" element={<Project />} />
+        <Route path="/tasks/:projectId" element={<TaskList />} />
       </Routes>
     </>
   );

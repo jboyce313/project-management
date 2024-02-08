@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TasksList = ({ tasks }) => {
+export const TaskList = ({ tasks }) => {
   return (
     <div>
       <h2>Tasks</h2>

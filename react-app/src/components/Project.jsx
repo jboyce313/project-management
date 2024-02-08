@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { TaskList } from "./components/TaskList";
+import { TaskList } from "./TaskList";
 
 export const Project = ({ match }) => {
   const [project, setProject] = useState(null);

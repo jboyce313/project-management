@@ -1,0 +1,25 @@
+{
+  "name": "project-management",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jboyce313/project-management.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jboyce313/project-management/issues"
+  },
+  "homepage": "https://github.com/jboyce313/project-management#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongo": "^0.1.0"
+  }
+}

@@ -27,12 +27,16 @@ function App() {
         <Route
           path="/"
           element={
-            <Login
-              setUser={setUser}
-              setLoggedIn={setLoggedIn}
-              setIsManager={setIsManager}
-              isManager={isManager}
-            />
+            loggedIn === true ? (
+              <ProjectList />
+            ) : (
+              <Login
+                setUser={setUser}
+                setLoggedIn={setLoggedIn}
+                setIsManager={setIsManager}
+                isManager={isManager}
+              />
+            )
           }
         />
         <Route path="/projects" element={<ProjectList />} />

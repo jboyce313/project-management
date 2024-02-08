@@ -10,9 +10,12 @@ export const ProjectList = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await fetch("/projects");
+      const response = await fetch("/api/projects");
+      console.log(response);
       const data = await response.json();
+      console.log(data);
       setProjects(data);
+      console.log(projects);
     } catch (error) {
       console.log("Error fetching projects", error);
     }

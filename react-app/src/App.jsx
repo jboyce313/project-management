@@ -12,7 +12,7 @@ function App() {
   let [isManager, setIsManager] = useState("");
   let [loggedIn, setLoggedIn] = useState(localStorage.getItem("loggedIn"));
 
-  useEffect(() => console.log("check: " + isManager), [isManager]);
+  console.log("logged in: " + localStorage.getItem("loggedIn"));
 
   return (
     <>
@@ -27,7 +27,7 @@ function App() {
         <Route
           path="/"
           element={
-            loggedIn === true ? (
+            localStorage.getItem("loggedIn") == "true" ? (
               <ProjectList />
             ) : (
               <Login

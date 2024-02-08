@@ -7,8 +7,6 @@ export function Login({ setUser, setLoggedIn, setIsManager, isManager }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  console.log(localStorage.getItem("loggedIn"));
-
   // Function to handle changes in the username input
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -29,7 +27,7 @@ export function Login({ setUser, setLoggedIn, setIsManager, isManager }) {
     console.log(user);
     if (user) {
       setUser(user.username);
-      localStorage.setItem("loggedIn", "true");
+      localStorage.setItem("loggedIn", true);
       setLoggedIn(true);
       if (user.manager == true) setIsManager(true);
       console.log("logged in: " + localStorage.getItem("loggedIn"));

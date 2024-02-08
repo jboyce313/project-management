@@ -21,7 +21,7 @@ function App() {
         />
         <Route path="/projects" element={<ProjectList />} />
         <Route path="/projects/:projectID" element={<Project />} />
-        <Route path="/tasks" element={<TaskList />} />
+        <Route path="/tasks/:projectId" element={<TaskList />} />
       </Routes>
     </>
   );

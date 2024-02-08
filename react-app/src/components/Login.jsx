@@ -40,31 +40,36 @@ export function Login({ setUser, setLoggedIn }) {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <form className="login-form" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label className="form-label" htmlFor="username">
+          Username:
+        </label>
+        <input
+          className="username-input"
+          type="text"
+          id="username"
+          value={username}
+          onChange={handleUsernameChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label className="form-label" htmlFor="password">
+          Password:
+        </label>
+        <input
+          className="password-input"
+          type="password"
+          id="password"
+          value={password}
+          onChange={handlePasswordChange}
+          required
+        />
+      </div>
+      <button className="submit-button" type="submit">
+        Login
+      </button>
+    </form>
   );
 }

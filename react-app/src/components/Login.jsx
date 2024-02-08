@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { login } from "../scripts/Login";
 
-export function Login({ setUser, setLoggedIn }) {
+export function Login({ setUser, setLoggedIn, setIsManager, isManager }) {
   // State variables to hold the username and password
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,17 +19,19 @@ export function Login({ setUser, setLoggedIn }) {
   };
 
   // Function to handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Here you can perform validation, authentication, etc.
     console.log("Username:", username);
     console.log("Password:", password);
-    const sucessfulLogin = login(username, password);
-    if (sucessfulLogin) {
-      setUser(username);
-      localStorage.setItem("loggedIn", true);
+    const user = await login(username, password);
+    console.log(user);
+    if (user) {
+      setUser(user.username);
+      localStorage.setItem("loggedIn", "true");
       setLoggedIn(true);
-      console.log(localStorage.getItem("loggedIn"));
+      if (user.manager == true) setIsManager(true);
+      console.log("logged in: " + localStorage.getItem("loggedIn"));
     } else {
       alert("Invalid Login");
     }

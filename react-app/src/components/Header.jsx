@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import "../styles/header.css"; // Import CSS file
 
-export function Header({ setLoggedIn }) {
+export function Header({ setLoggedIn, setUser, user }) {
   function handleClick() {
     localStorage.setItem("loggedIn", "false");
     setLoggedIn(false);
+    setUser("");
   }
 
   return (

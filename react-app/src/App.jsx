@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Login } from "./components/Login";
 import { ProjectList } from "./components/ProjectList";
@@ -9,16 +9,26 @@ import { Header } from "./components/Header";
 
 function App() {
   let [user, setUser] = useState([]);
+  let [isManager, setIsManager] = useState("");
   let [loggedIn, setLoggedIn] = useState(localStorage.getItem("loggedIn"));
+
+  useEffect(() => console.log("check: " + isManager), [isManager]);
 
   return (
     <>
-      <Header setLoggedIn={setLoggedIn} />
+      <Header setLoggedIn={setLoggedIn} setUser={setUser} user={user} />
 
       <Routes>
         <Route
           path="/"
-          element={<Login setUser={setUser} setLoggedIn={setLoggedIn} />}
+          element={
+            <Login
+              setUser={setUser}
+              setLoggedIn={setLoggedIn}
+              setIsManager={setIsManager}
+              isManager={isManager}
+            />
+          }
         />
         <Route path="/projects" element={<ProjectList />} />
         <Route path="/projects/:projectID" element={<Project />} />

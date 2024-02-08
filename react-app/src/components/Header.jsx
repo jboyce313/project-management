@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 
-export function Header({ setLoggedIn, setUser, user }) {
+export function Header({ setLoggedIn, setUser, user, setIsManager }) {
   function handleClick() {
     localStorage.setItem("loggedIn", "false");
     setLoggedIn(false);
+    setIsManager(false);
     setUser("");
   }
   return (

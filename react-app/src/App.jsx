@@ -16,7 +16,12 @@ function App() {
 
   return (
     <>
-      <Header setLoggedIn={setLoggedIn} setUser={setUser} user={user} />
+      <Header
+        setLoggedIn={setLoggedIn}
+        setUser={setUser}
+        user={user}
+        setIsManager={setIsManager}
+      />
 
       <Routes>
         <Route

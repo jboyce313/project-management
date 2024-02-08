@@ -3,19 +3,20 @@ import { Routes, Route } from "react-router-dom";
 import { Login } from "./components/Login";
 import { ProjectList } from "./components/ProjectList";
 import { Project } from "./components/Project";
+import { Header } from "./components/Header";
 
 function App() {
   let [user, setUser] = useState([]);
-  let [isLoggedIn, setIsLoggedIn] = useState(false);
+  let [loggedIn, setLoggedIn] = useState(localStorage.getItem("loggedIn"));
 
   return (
     <>
-      <h1>Project Management</h1>
+      <Header setLoggedIn={setLoggedIn} />
 
       <Routes>
         <Route
           path="/"
-          element={<Login setUser={setUser} setIsLoggedIn={setIsLoggedIn} />}
+          element={<Login setUser={setUser} setLoggedIn={setLoggedIn} />}
         />
         <Route path="/projects" element={<ProjectList />} />
         <Route path="/projects/:projectID" element={<Project />} />

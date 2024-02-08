@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { login } from "../scripts/Login";
 
-export function Login({ setUser, setIsLoggedIn }) {
+export function Login({ setUser, setLoggedIn }) {
   // State variables to hold the username and password
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  console.log(localStorage.getItem("loggedIn"));
 
   // Function to handle changes in the username input
   const handleUsernameChange = (event) => {
@@ -25,7 +27,8 @@ export function Login({ setUser, setIsLoggedIn }) {
     const sucessfulLogin = login(username, password);
     if (sucessfulLogin) {
       setUser(username);
-      setIsLoggedIn(true);
+      localStorage.setItem("loggedIn", true);
+      setLoggedIn(true);
       console.log(localStorage.getItem("loggedIn"));
     } else {
       alert("Invalid Login");

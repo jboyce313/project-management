@@ -254,8 +254,7 @@ app.post("/api/login", async (req, res) => {
     // If both checks pass, return success message or token
     client.close();
     // Set the loggedIn variable to true
-    localStorage.setItem("loggedIn", "true");
-    localStorage.setItem("loggedInUser", username);
+
     res.status(200).json({ message: "Login successful" });
   } catch (err) {
     console.error(err);

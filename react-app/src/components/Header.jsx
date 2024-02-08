@@ -8,7 +8,7 @@ export function Header({ setLoggedIn }) {
   return (
     <>
       <h1>Project Management</h1>
-      {localStorage.getItem("loggedIn") === "true" ? (
+      {localStorage.getItem("loggedIn") === true ? (
         <Link onClick={handleClick} to={"/"}>
           Logout
         </Link>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const ProjectList = () => {
+export const ProjectList = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const ProjectList = () => {
       const data = await response.json();
       setProjects(data);
     } catch (error) {
-      console.log('Error fetching projects', error);
+      console.log("Error fetching projects", error);
     }
   };
 
@@ -22,7 +22,7 @@ const ProjectList = () => {
     <div>
       <h1>Project List</h1>
       <ul>
-        {projects.map(project => (
+        {projects.map((project) => (
           <li key={project._id}>
             <h2>{project.name}</h2>
             <Link to={`/tasks/${project._id}`}>View Tasks</Link>
@@ -32,5 +32,3 @@ const ProjectList = () => {
     </div>
   );
 };
-
-export default ProjectList;

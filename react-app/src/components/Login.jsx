@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { login } from "../scripts/Login";
 
-export function Login() {
+export function Login({ setUser, setIsLoggedIn }) {
   // State variables to hold the username and password
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +22,15 @@ export function Login() {
     // Here you can perform validation, authentication, etc.
     console.log("Username:", username);
     console.log("Password:", password);
+    const sucessfulLogin = login(username, password);
+    if (sucessfulLogin) {
+      setUser(username);
+      setIsLoggedIn(true);
+      console.log(localStorage.getItem("loggedIn"));
+    } else {
+      alert("Invalid Login");
+    }
+
     // Reset the form fields after submission
     setUsername("");
     setPassword("");

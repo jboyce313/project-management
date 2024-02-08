@@ -20,7 +20,7 @@ function connectToDB() {
 }
 
 // Route to get all projects
-app.get("/projects", async (req, res) => {
+app.get("/api/projects", async (req, res) => {
   try {
     connectToDB();
     const db = client.db("project_management");
@@ -33,7 +33,7 @@ app.get("/projects", async (req, res) => {
   }
 });
 
-app.get("/projects/:projectId", async (req, res) => {
+app.get("/api/projects/:projectId", async (req, res) => {
   const projectId = req.params.projectId;
 
   try {
@@ -69,7 +69,7 @@ app.get("/projects/:projectId", async (req, res) => {
 });
 
 // Route to get all task
-app.get("/tasks", async (req, res) => {
+app.get("/api/tasks", async (req, res) => {
   try {
     connectToDB();
     const db = client.db("project_management");
@@ -83,7 +83,7 @@ app.get("/tasks", async (req, res) => {
 });
 
 // Route to create a new task
-app.post("/tasks", async (req, res) => {
+app.post("/api/tasks", async (req, res) => {
   const { projectID, description, assignedTo, dueDate, estimatedDuration } =
     req.body;
   const task = {
@@ -110,7 +110,7 @@ app.post("/tasks", async (req, res) => {
 });
 
 // Route to add a new project
-app.post("/projects", async (req, res) => {
+app.post("/api/projects", async (req, res) => {
   const { teamSize, budget, workload, completionTime } = req.body;
   const project = {
     teamSize,
@@ -136,7 +136,7 @@ app.post("/projects", async (req, res) => {
 });
 
 // Route to delete a task
-app.delete("/tasks/:id", async (req, res) => {
+app.delete("/api/tasks/:id", async (req, res) => {
   const taskID = req.params.id;
 
   connectToDB();
@@ -158,7 +158,7 @@ app.delete("/tasks/:id", async (req, res) => {
 });
 
 // Route to delete a project
-app.delete("/projects/:id", async (req, res) => {
+app.delete("/api/projects/:id", async (req, res) => {
   const projectID = req.params.id;
 
   connectToDB();
@@ -180,7 +180,7 @@ app.delete("/projects/:id", async (req, res) => {
 });
 
 //Route to update a task
-app.put("/tasks/:id", async (req, res) => {
+app.put("/api/tasks/:id", async (req, res) => {
   const taskID = req.params.id;
   const updatedTask = req.body;
 
@@ -203,7 +203,7 @@ app.put("/tasks/:id", async (req, res) => {
 });
 
 //Route to update a project
-app.put("/projects/:id", async (req, res) => {
+app.put("/api/projects/:id", async (req, res) => {
   const projectID = req.params.id;
   const updatedProject = req.body;
 
@@ -226,7 +226,7 @@ app.put("/projects/:id", async (req, res) => {
 });
 
 // Login Route
-app.post("/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
   const { username, password } = req.body;
 
   try {
@@ -253,6 +253,9 @@ app.post("/login", async (req, res) => {
 
     // If both checks pass, return success message or token
     client.close();
+    // Set the loggedIn variable to true
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("loggedInUser", username);
     res.status(200).json({ message: "Login successful" });
   } catch (err) {
     console.error(err);

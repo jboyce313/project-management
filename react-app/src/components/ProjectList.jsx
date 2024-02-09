@@ -26,7 +26,7 @@ export const ProjectList = ({ isManager }) => {
   console.log(projects);
 
   return (
-    <div>
+    <div className="projectListContainer">
       <div className="projectListHeader">
         <h1>Projects</h1>
         {isManager == true ? (

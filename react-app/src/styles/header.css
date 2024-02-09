@@ -33,4 +33,9 @@
   border: 1px solid #fff;
   border-radius: 4px;
   margin-top: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logout-link:hover {
+  transform: scale(1.1);
 }

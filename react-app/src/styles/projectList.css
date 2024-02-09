@@ -2,19 +2,22 @@
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  /* border-bottom: 2px black solid;
-  border-top: 2px black solid; */
 }
 
 .createProject {
-  background-color: #333;
-  color: white;
+  background-color: white;
+  color: #333;
   padding: 10px;
   border-radius: 3px;
   font-weight: bold;
   margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.createProject:hover,
+.project:hover {
+  transform: scale(1.1);
 }
 
 .projectList {
@@ -23,17 +26,16 @@
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  /* flex-wrap: wrap;
-  justify-content: space-between; */
 }
 
 .project {
-  width: 80%;
+  width: 70%;
   padding: 40px;
   display: flex;
   justify-content: space-between;
   border-left: 1px rgb(223, 223, 223) solid;
   border-right: 1px rgb(223, 223, 223) solid;
+  transition: transform 0.3s ease;
 }
 
 .project a {

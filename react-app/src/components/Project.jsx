@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { TaskList } from "./TaskList";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import "../styles/project.css";
 import { MdPeople } from "react-icons/md";
@@ -30,7 +31,17 @@ export const Project = ({ match }) => {
       {project ? (
         <div className="projectContainer">
           <div className="infoAndHeader">
-            <h1>{project.name}</h1>
+            <div className="headerAndButton">
+              <h2>{project.name}</h2>
+              {localStorage.getItem("isManager") == "true" ? (
+                <Link
+                  to={`/projects/${projectID}/createTask`}
+                  className="createTask"
+                >
+                  Create Task
+                </Link>
+              ) : null}
+            </div>
             <div className="projectInfo">
               <div className="darkGray">
                 <MdPeople />

@@ -5,6 +5,7 @@ import { ProjectList } from "./components/ProjectList";
 import { Project } from "./components/Project";
 import { TaskList } from "./components/TaskList";
 import { Header } from "./components/Header";
+import { CreateTask } from "./components/CreateTask";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
         <Route path="/projects" element={<ProjectList />} />
         <Route path="/projects/:projectID" element={<Project />} />
         <Route path="/tasks/:projectId" element={<TaskList />} />
+        <Route
+          path="/projects/:projectID/createTask"
+          element={<CreateTask />}
+        />
       </Routes>
     </>
   );

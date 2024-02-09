@@ -1,0 +1,31 @@
+.createTaskForm {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px;
+}
+
+.createTaskForm div {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.createTaskForm div input {
+  width: 50%;
+}
+
+.createTaskForm button {
+  background-color: lightgray;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+  border: 1px black solid;
+  margin-top: 10px;
+}
+
+.createTaskForm button:hover {
+  transform: scale(1.05);
+}

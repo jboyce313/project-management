@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/projectList.css";
 import { MdPeople } from "react-icons/md";
@@ -48,7 +48,10 @@ export const ProjectList = ({ setIsManager, isManager }) => {
               borderTopRightRadius: index === 0 ? "8px" : "0",
             }}
           >
-            <Link style={{ color: index % 2 === 0 ? "white" : "gray" }}>
+            <Link
+              to={`/projects/${project._id}`}
+              style={{ color: index % 2 === 0 ? "white" : "gray" }}
+            >
               {project.name}
             </Link>
             <div className="projectDetails">

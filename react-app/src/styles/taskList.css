@@ -1,0 +1,28 @@
+.tasksHeader {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.taskLists {
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 10px; */
+  background-color: gray;
+}
+
+.taskList {
+  width: 33%;
+  padding-bottom: 700px;
+  padding-top: 20px;
+}
+
+.inProgress {
+  background-color: lightgray;
+}
+
+.taskList h3 {
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+}

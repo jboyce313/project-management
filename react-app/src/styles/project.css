@@ -1,0 +1,30 @@
+.infoAndHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  background-color: #333;
+}
+.infoAndHeader h1 {
+  width: 33.5%;
+  color: white;
+  margin-left: 25px;
+}
+
+.projectInfo {
+  display: flex;
+  justify-content: space-evenly;
+  width: 66.5%;
+  color: white;
+}
+
+.projectInfo div {
+  width: 25%;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.hide {
+  color: #333;
+}

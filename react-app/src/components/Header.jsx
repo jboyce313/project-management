@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import "../styles/header.css"; // Import CSS file
 
-export function Header({ setLoggedIn, setUser, user, setIsManager }) {
+export function Header({
+  setLoggedIn,
+  setUser,
+  user,
+  setIsManager,
+  isManager,
+}) {
   function handleClick() {
     localStorage.setItem("loggedIn", "false");
+    localStorage.setItem("isManager", "false");
     setLoggedIn(false);
     setIsManager(false);
     setUser("");

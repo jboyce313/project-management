@@ -5,7 +5,7 @@ import { MdPeople } from "react-icons/md";
 import { MdWork } from "react-icons/md";
 import { IoIosTime } from "react-icons/io";
 
-export const ProjectList = ({ isManager }) => {
+export const ProjectList = ({ setIsManager, isManager }) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -28,13 +28,14 @@ export const ProjectList = ({ isManager }) => {
   return (
     <div className="projectListContainer">
       <div className="projectListHeader">
-        <h1>Projects</h1>
-        {isManager == true ? (
+        {/* <h1>Projects</h1> */}
+        {localStorage.getItem("isManager") == "true" ? (
           <button className="createProject">Create Project</button>
         ) : (
           ""
         )}
       </div>
+
       <div className="projectList">
         {projects.map((project, index) => (
           <div

@@ -21,6 +21,7 @@ function App() {
         setUser={setUser}
         user={user}
         setIsManager={setIsManager}
+        isManager={isManager}
       />
 
       <Routes>
@@ -28,7 +29,7 @@ function App() {
           path="/"
           element={
             localStorage.getItem("loggedIn") == "true" ? (
-              <ProjectList isManager={isManager} />
+              <ProjectList setIsManager={setIsManager} isManager={isManager} />
             ) : (
               <Login
                 setUser={setUser}

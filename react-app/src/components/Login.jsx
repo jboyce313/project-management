@@ -24,12 +24,14 @@ export function Login({ setUser, setLoggedIn, setIsManager, isManager }) {
     console.log("Username:", username);
     console.log("Password:", password);
     const user = await login(username, password);
-    console.log(user);
     if (user) {
       setUser(user.username);
       localStorage.setItem("loggedIn", true);
       setLoggedIn(true);
-      if (user.manager == true) setIsManager(true);
+      if (user.manager == true) {
+        localStorage.setItem("isManager", true);
+        setIsManager(true);
+      }
       console.log("logged in: " + localStorage.getItem("loggedIn"));
     } else {
       alert("Invalid Login");

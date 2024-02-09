@@ -1,0 +1,178 @@
+[
+  {
+    "projectID": "65c5869551c2e73b2057e905",
+    "description": "Design user interface for prototype",
+    "assignedTo": "John Doe",
+    "dueDate": "2024-03-15",
+    "estimatedDuration": 20
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e905",
+    "description": "Implement backend functionality",
+    "assignedTo": "Jane Smith",
+    "dueDate": "2024-04-10",
+    "estimatedDuration": 30
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e905",
+    "description": "Test prototype for bugs",
+    "assignedTo": "Mike Johnson",
+    "dueDate": "2024-05-05",
+    "estimatedDuration": 15
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e906",
+    "description": "Book venue for event",
+    "assignedTo": "Emily Brown",
+    "dueDate": "2024-03-20",
+    "estimatedDuration": 10
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e906",
+    "description": "Arrange catering service",
+    "assignedTo": "David Lee",
+    "dueDate": "2024-04-05",
+    "estimatedDuration": 5
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e907",
+    "description": "Implement user authentication feature",
+    "assignedTo": "Alex Johnson",
+    "dueDate": "2024-04-20",
+    "estimatedDuration": 25
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e907",
+    "description": "Develop UI screens for mobile app",
+    "assignedTo": "Sara White",
+    "dueDate": "2024-05-10",
+    "estimatedDuration": 35
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e907",
+    "description": "Integrate payment gateway",
+    "assignedTo": "Chris Taylor",
+    "dueDate": "2024-06-05",
+    "estimatedDuration": 20
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e908",
+    "description": "Design training materials",
+    "assignedTo": "Emma Garcia",
+    "dueDate": "2024-03-25",
+    "estimatedDuration": 15
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e908",
+    "description": "Create interactive quizzes",
+    "assignedTo": "Michael Martinez",
+    "dueDate": "2024-04-15",
+    "estimatedDuration": 20
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e908",
+    "description": "Conduct pilot training session",
+    "assignedTo": "Jessica Adams",
+    "dueDate": "2024-05-01",
+    "estimatedDuration": 30
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e909",
+    "description": "Design promotional materials",
+    "assignedTo": "Kevin Wilson",
+    "dueDate": "2024-04-10",
+    "estimatedDuration": 25
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e909",
+    "description": "Launch social media campaigns",
+    "assignedTo": "Rachel Turner",
+    "dueDate": "2024-04-25",
+    "estimatedDuration": 20
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e909",
+    "description": "Analyze market trends",
+    "assignedTo": "Steven Clark",
+    "dueDate": "2024-05-15",
+    "estimatedDuration": 35
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90a",
+    "description": "Upgrade database system",
+    "assignedTo": "Olivia Brown",
+    "dueDate": "2024-05-05",
+    "estimatedDuration": 25
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90a",
+    "description": "Implement new security features",
+    "assignedTo": "Daniel Evans",
+    "dueDate": "2024-06-10",
+    "estimatedDuration": 30
+  },
+
+  {
+    "projectID": "65c5869551c2e73b2057e90b",
+    "description": "Collect and clean data",
+    "assignedTo": "Sophia Hernandez",
+    "dueDate": "2024-04-20",
+    "estimatedDuration": 25
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90b",
+    "description": "Perform statistical analysis",
+    "assignedTo": "Liam Murphy",
+    "dueDate": "2024-05-10",
+    "estimatedDuration": 30
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90b",
+    "description": "Create data visualization",
+    "assignedTo": "Ava Rivera",
+    "dueDate": "2024-06-05",
+    "estimatedDuration": 20
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90c",
+    "description": "Upgrade server hardware",
+    "assignedTo": "Noah Cooper",
+    "dueDate": "2024-05-01",
+    "estimatedDuration": 35
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90c",
+    "description": "Implement network security protocols",
+    "assignedTo": "Mia Hayes",
+    "dueDate": "2024-05-20",
+    "estimatedDuration": 25
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90d",
+    "description": "Gather website requirements",
+    "assignedTo": "Ethan Price",
+    "dueDate": "2024-04-15",
+    "estimatedDuration": 30
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90d",
+    "description": "Create wireframes",
+    "assignedTo": "Isabella Rogers",
+    "dueDate": "2024-05-05",
+    "estimatedDuration": 25
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90e",
+    "description": "Write blog posts",
+    "assignedTo": "James Baker",
+    "dueDate": "2024-04-25",
+    "estimatedDuration": 20
+  },
+  {
+    "projectID": "65c5869551c2e73b2057e90e",
+    "description": "Create video content",
+    "assignedTo": "Charlotte Sanders",
+    "dueDate": "2024-05-15",
+    "estimatedDuration": 35
+  }
+]

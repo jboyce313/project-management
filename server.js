@@ -111,7 +111,7 @@ app.post("/api/tasks", async (req, res) => {
 
 // Route to add a new project
 app.post("/api/projects", async (req, res) => {
-  const { teamSize, budget, workload, completionTime } = req.body;
+  const { name, teamSize, budget, workload, completionTime } = req.body;
   const project = {
     teamSize,
     budget,

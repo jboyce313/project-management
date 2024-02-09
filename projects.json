@@ -1,8 +1,72 @@
 [
   {
-    "name": "Project A",
-    "description": "Developing a new website",
-    "start_date": "2024-02-01",
-    "end_date": "2024-03-15"
+    "name": "Website Redesign",
+    "teamSize": 8,
+    "budget": 50000,
+    "workload": "High",
+    "completionTime": "3 months"
+  },
+  {
+    "name": "Mobile App Development",
+    "teamSize": 10,
+    "budget": 80000,
+    "workload": "Medium",
+    "completionTime": "6 months"
+  },
+  {
+    "name": "Marketing Campaign Launch",
+    "teamSize": 5,
+    "budget": 30000,
+    "workload": "High",
+    "completionTime": "2 months"
+  },
+  {
+    "name": "Product Prototype Development",
+    "teamSize": 6,
+    "budget": 70000,
+    "workload": "High",
+    "completionTime": "4 months"
+  },
+  {
+    "name": "Data Analysis Project",
+    "teamSize": 4,
+    "budget": 40000,
+    "workload": "Medium",
+    "completionTime": "5 months"
+  },
+  {
+    "name": "Software Upgrade",
+    "teamSize": 7,
+    "budget": 60000,
+    "workload": "High",
+    "completionTime": "3 months"
+  },
+  {
+    "name": "Content Creation",
+    "teamSize": 3,
+    "budget": 20000,
+    "workload": "Low",
+    "completionTime": "1 month"
+  },
+  {
+    "name": "Infrastructure Improvement",
+    "teamSize": 9,
+    "budget": 90000,
+    "workload": "High",
+    "completionTime": "6 months"
+  },
+  {
+    "name": "Event Planning",
+    "teamSize": 6,
+    "budget": 40000,
+    "workload": "Medium",
+    "completionTime": "3 months"
+  },
+  {
+    "name": "Training Program Development",
+    "teamSize": 5,
+    "budget": 35000,
+    "workload": "Medium",
+    "completionTime": "4 months"
   }
 ]

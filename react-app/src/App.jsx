@@ -4,8 +4,8 @@ import { Login } from "./components/Login";
 import { ProjectList } from "./components/ProjectList";
 import { Project } from "./components/Project";
 import { TaskList } from "./components/TaskList";
-
 import { Header } from "./components/Header";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   let [user, setUser] = useState([]);
@@ -21,6 +21,7 @@ function App() {
         setUser={setUser}
         user={user}
         setIsManager={setIsManager}
+        isManager={isManager}
       />
 
       <Routes>
@@ -28,7 +29,7 @@ function App() {
           path="/"
           element={
             localStorage.getItem("loggedIn") == "true" ? (
-              <ProjectList />
+              <ProjectList setIsManager={setIsManager} isManager={isManager} />
             ) : (
               <Login
                 setUser={setUser}

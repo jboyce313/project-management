@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "../styles/projectList.css";
+import { MdPeople } from "react-icons/md";
+import { MdWork } from "react-icons/md";
+import { IoIosTime } from "react-icons/io";
 
-export const ProjectList = () => {
+export const ProjectList = ({ setIsManager, isManager }) => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -22,16 +26,48 @@ export const ProjectList = () => {
   console.log(projects);
 
   return (
-    <div>
-      <h1>Project List</h1>
-      <ul>
-        {projects.map((project) => (
-          <li key={project._id}>
-            <h2>{project.name}</h2>
-            <Link to={`/tasks/${project._id}`}>View Tasks</Link>
-          </li>
+    <div className="projectListContainer">
+      <div className="projectListHeader">
+        {/* <h1>Projects</h1> */}
+        {localStorage.getItem("isManager") == "true" ? (
+          <button className="createProject">Create Project</button>
+        ) : (
+          ""
+        )}
+      </div>
+
+      <div className="projectList">
+        {projects.map((project, index) => (
+          <div
+            className="project"
+            key={project._id}
+            to={`/projects/${project._id}`}
+            style={{
+              backgroundColor: index % 2 === 0 ? "gray" : "white",
+              borderTopLeftRadius: index === 0 ? "8px" : "0",
+              borderTopRightRadius: index === 0 ? "8px" : "0",
+            }}
+          >
+            <Link style={{ color: index % 2 === 0 ? "white" : "gray" }}>
+              {project.name}
+            </Link>
+            <div className="projectDetails">
+              <div className="detail">
+                <MdPeople />
+                <p>{project.teamSize}</p>
+              </div>
+              <div className="detail">
+                <MdWork />
+                <p>{project.workload}</p>
+              </div>
+              <div className="detail">
+                <IoIosTime />
+                <p>{project.completionTime}</p>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

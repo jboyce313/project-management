@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import "../styles/header.css"; // Import CSS file
 
-export function Header({ setLoggedIn, setUser, user, setIsManager }) {
+export function Header({
+  setLoggedIn,
+  setUser,
+  user,
+  setIsManager,
+  isManager,
+}) {
   function handleClick() {
     localStorage.setItem("loggedIn", "false");
+    localStorage.setItem("isManager", "false");
     setLoggedIn(false);
     setIsManager(false);
     setUser("");
@@ -12,9 +19,9 @@ export function Header({ setLoggedIn, setUser, user, setIsManager }) {
   return (
     <header className="header">
       <div className="container">
-        <h1 className="logo">Project Management</h1>
+        <h1 className="logo">Project Manager</h1>
         <p className="made-by">Made by Aaron & Jacob</p>
-        {localStorage.getItem("loggedIn") === "true" ? (
+        {localStorage.getItem("loggedIn") == "true" ? (
           <Link onClick={handleClick} to={"/"} className="logout-link">
             Logout
           </Link>

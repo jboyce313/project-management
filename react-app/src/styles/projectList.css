@@ -10,7 +10,7 @@
   background-color: white;
   color: #333;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 4px;
   font-weight: bold;
   margin-top: 10px;
   transition: transform 0.3s ease;
@@ -47,6 +47,7 @@
 
 .projectDetails {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 30%;
@@ -55,6 +56,7 @@
 .detail {
   display: flex;
   justify-content: center;
+  margin-top: 5px;
 }
 
 .detail * {

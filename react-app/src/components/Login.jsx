@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { login } from "../scripts/Login";
+import "../styles/login.css";
 
 export function Login({ setUser, setLoggedIn, setIsManager, isManager }) {
   // State variables to hold the username and password

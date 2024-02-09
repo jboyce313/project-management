@@ -1,7 +1,9 @@
 .projectListHeader {
   padding: 30px 40px;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   /* border-bottom: 2px black solid;
   border-top: 2px black solid; */
 }
@@ -12,6 +14,7 @@
   padding: 10px;
   border-radius: 3px;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .projectList {

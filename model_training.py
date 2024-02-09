@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+import pickle
 
 def generate_dummy_data(num_records=1000):
     fake = Faker()
@@ -54,3 +55,12 @@ accuracy_percentage = (accurate_predictions / len(y_test)) * 100  # Calculate ac
 print("Accuracy Percentage:", accuracy_percentage)
 
 # Since the data generated is all random, the predicted data will also be random and inaccurate.
+
+
+# Save the trained model to a file
+with open('trained_model.pkl', 'wb') as file:
+    pickle.dump(model, file)
+
+# Load the trained model from the file
+with open('trained_model.pkl', 'rb') as file:
+    loaded_model = pickle.load(file)

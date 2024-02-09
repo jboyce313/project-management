@@ -1,5 +1,6 @@
 import express from "express";
 import { MongoClient, ObjectId } from "mongodb";
+const { PythonShell } = require('python-shell');
 
 const app = express();
 
@@ -261,5 +262,27 @@ app.post("/api/login", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
+app.post('/predict', (req, res) => {
+  const { team_size, budget, workload } = req.body;
+
+  const options = {
+    scriptPath: 'C:\Users\wasadmin\Documents\capstone\project-management\model_training.py', 
+    args: [team_size, budget, workload] 
+  };
+
+  // Execute the Python script
+  PythonShell.run('model_training.py', options, (err, results) => {
+    if (err) {
+      console.error('Error executing Python script:', err);
+      res.status(500).json({ error: 'An error occurred' });
+    } else {
+      const predicted_completion_time = results[0];
+      res.json({ predicted_completion_time });
+    }
+  });
+});
+
+
 const port = 3500;
 app.listen(port, () => console.log(`Listening on port ${port}.`));

@@ -10,7 +10,7 @@ export const TaskList = ({ tasks }) => {
       {/* <h2 className="tasksHeader">Tasks</h2> */}
       <div className="taskLists">
         <div className="backlog taskList">
-          <h3>Backlog</h3>
+          <h3>To Do</h3>
           {tasks.map((task) =>
             !task.status ? (
               <Task

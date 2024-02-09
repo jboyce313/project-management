@@ -23,6 +23,7 @@ export function CreateTask() {
     const newTask = postTask();
     console.log(newTask);
     setTaskSubmitted("true");
+    window.location.href = `/projects/${projectID}`;
   };
 
   async function postTask() {

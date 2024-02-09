@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/task.css";
 
 export function Task({ task, list, setList }) {
@@ -16,6 +16,12 @@ export function Task({ task, list, setList }) {
       setStatus(task.status);
     }
     setList(list === "one" ? "two" : "one");
+  }
+
+  function handleClick() {
+    setList(list === "one" ? "two" : "one");
+
+    deleteTask();
   }
 
   async function deleteTask() {
@@ -36,6 +42,9 @@ export function Task({ task, list, setList }) {
 
       const responseData = await response.json();
       console.log(responseData);
+      console.log("Before setList:", list);
+      console.log("After setList:", list);
+
       return responseData; // Assuming your server responds with some data upon successful login
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -58,7 +67,7 @@ export function Task({ task, list, setList }) {
           <button onClick={changeStatus}>Reopen</button>
         ) : null}
         {localStorage.getItem("isManager") == "true" ? (
-          <button className="delete" onClick={deleteTask}>
+          <button className="delete" onClick={handleClick}>
             Delete
           </button>
         ) : null}

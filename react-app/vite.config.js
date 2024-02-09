@@ -10,8 +10,6 @@ export default defineConfig({
         target: "http://localhost:3500",
         changeOrigin: true,
       },
-    },
-    proxy: {
       "/data": {
         target: "http://localhost:5000",
         changeOrigin: true,

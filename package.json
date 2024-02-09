@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/jboyce313/project-management#readme",
   "dependencies": {
+    "axios": "^1.6.7",
     "express": "^4.18.2",
-    "mongo": "^0.1.0"
+    "mongo": "^0.1.0",
+    "python-shell": "^5.0.0"
   }
 }

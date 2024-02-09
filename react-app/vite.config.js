@@ -11,5 +11,11 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
+    proxy: {
+      "/data": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+    },
   },
 });

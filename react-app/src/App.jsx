@@ -7,6 +7,7 @@ import { TaskList } from "./components/TaskList";
 import { Header } from "./components/Header";
 import { CreateTask } from "./components/CreateTask";
 import { PredictCompleteTime } from "./components/PredictCompleteTime";
+import { CreateProject } from "./components/CreateProject";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
           element={<CreateTask />}
         />
         <Route path="/predict" element={<PredictCompleteTime />} />
+        <Route path="/createProject" element={<CreateProject />} />
       </Routes>
     </>
   );

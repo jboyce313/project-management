@@ -113,6 +113,7 @@ app.post("/api/tasks", async (req, res) => {
 app.post("/api/projects", async (req, res) => {
   const { name, teamSize, budget, workload, completionTime } = req.body;
   const project = {
+    name,
     teamSize,
     budget,
     workload,

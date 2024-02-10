@@ -16,7 +16,7 @@ body {
   margin-bottom: 15px;
 }
 
-input {
+.predictionForm input {
   width: 200px;
   padding: 8px;
   margin-left: 10px;
@@ -24,7 +24,7 @@ input {
   border-radius: 5px;
 }
 
-button {
+.predictionForm button {
   padding: 10px 20px;
   background-color: #555;
   color: white;
@@ -34,7 +34,7 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+.predictionForm button:hover {
   background-color: #333;
 }
 

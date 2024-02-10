@@ -30,7 +30,9 @@ export const ProjectList = ({ setIsManager, isManager }) => {
       <div className="projectListHeader">
         {/* <h1>Projects</h1> */}
         {localStorage.getItem("isManager") == "true" ? (
-          <button className="createProject">Create Project</button>
+          <Link className="createProject" to={"/createProject"}>
+            Create Project
+          </Link>
         ) : (
           ""
         )}

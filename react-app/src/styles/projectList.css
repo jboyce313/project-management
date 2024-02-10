@@ -9,11 +9,13 @@
 .createProject {
   background-color: white;
   color: #333;
+  text-decoration: none;
   padding: 10px;
   border-radius: 4px;
   font-weight: bold;
   margin-top: 10px;
   transition: transform 0.3s ease;
+  border: 1px #333 solid;
 }
 
 .createProject:hover,

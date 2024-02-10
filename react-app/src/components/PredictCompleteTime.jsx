@@ -15,18 +15,24 @@ export function PredictCompleteTime() {
         budget: budget,
         workload: workload,
       });
-      
-      const completionTimeMonths = Math.floor(response.data.pred_completion_time);
-      const completionTimeDays = Math.round((response.data.pred_completion_time % 1) * 30); // Assuming a month has 30 days
-      
-      setPredictedCompletionTime(`${completionTimeMonths} months and ${completionTimeDays} days`);
+
+      const completionTimeMonths = Math.floor(
+        response.data.pred_completion_time
+      );
+      const completionTimeDays = Math.round(
+        (response.data.pred_completion_time % 1) * 30
+      ); // Assuming a month has 30 days
+
+      setPredictedCompletionTime(
+        `${completionTimeMonths} months and ${completionTimeDays} days`
+      );
     } catch (error) {
       console.error("error", error);
     }
   };
 
   return (
-    <div>
+    <div className="predictionForm">
       <h2>Predict Completion Time</h2>
       <div>
         <label>Team Size:</label>

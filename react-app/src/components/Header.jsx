@@ -19,16 +19,23 @@ export function Header({
   return (
     <header className="header">
       <div className="container">
-        <h1 className="logo">Project Manager</h1>
-        <p className="made-by">Made by Aaron & Jacob</p>
-        {localStorage.getItem("loggedIn") == "true" ? (
-          <Link onClick={handleClick} to={"/"} className="logout-link">
-            Logout
+        {/* <p className="made-by">Made by Aaron & Jacob</p> */}
+        {/* <div className="nav"> */}
+        <div className={"predictLink"}>
+          <Link to={"/predict"}>Completion Time Model</Link>
+        </div>
+        <div className="pageTitle">
+          <Link to={"/"} className="logo">
+            Project Manager
           </Link>
-        ) : null}
-        <Link className={"predictLink"} to={"/predict"}>
-          Project Completion Time Predictor
-        </Link>
+        </div>
+        <div className="logout-link">
+          {localStorage.getItem("loggedIn") == "true" ? (
+            <Link onClick={handleClick} to={"/"}>
+              Logout
+            </Link>
+          ) : null}
+        </div>
       </div>
     </header>
   );

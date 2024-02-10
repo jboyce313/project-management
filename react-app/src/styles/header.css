@@ -1,48 +1,65 @@
 .header {
   background-color: #333;
   color: #fff;
-  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  padding: 40px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.pageTitle {
+  width: 33%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .logo {
   font-size: 36px;
-  margin-bottom: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
 }
 
 .made-by {
+  width: 25%;
   font-size: 18px;
   margin: 0;
 }
 
+.nav {
+  width: 40%;
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .logout-link,
 .predictLink {
+  display: flex;
+  justify-content: center;
+  width: 33%;
+}
+
+.logout-link a,
+.predictLink a {
   color: #fff;
   text-decoration: none;
   padding: 8px 16px;
   border: 1px solid #fff;
   border-radius: 4px;
-  margin-top: 15px;
   transition: transform 0.3s ease;
 }
 
 .logout-link:hover,
-.predictLink:hover {
+.predictLink:hover,
+.logo:hover {
   transform: scale(1.1);
 }
-
-/* .predictLink {
-  text-decoration: none;
-  color: white;
-} */

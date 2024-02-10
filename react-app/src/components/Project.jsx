@@ -30,9 +30,8 @@ export const Project = ({ match }) => {
     <div>
       {project ? (
         <div className="projectContainer">
-          <div className="infoAndHeader">
-            <div className="headerAndButton">
-              <h2>{project.name}</h2>
+          <div className="createTaskDivContainer">
+            <div className="createTaskDiv">
               {localStorage.getItem("isManager") == "true" ? (
                 <Link
                   to={`/projects/${projectID}/createTask`}
@@ -41,6 +40,12 @@ export const Project = ({ match }) => {
                   Create Task
                 </Link>
               ) : null}
+            </div>
+            <div></div>
+          </div>
+          <div className="infoAndHeader">
+            <div className="headerAndButton">
+              <h2>{project.name}</h2>
             </div>
             <div className="projectInfo">
               <div className="darkGray">
@@ -66,6 +71,7 @@ export const Project = ({ match }) => {
               </div>
             </div>
           </div>
+
           <TaskList tasks={project.tasks} />
         </div>
       ) : (

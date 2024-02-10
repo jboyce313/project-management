@@ -26,6 +26,9 @@ export function Header({
             Logout
           </Link>
         ) : null}
+        <Link className={"predictLink"} to={"/predict"}>
+          Project Completion Time Predictor
+        </Link>
       </div>
     </header>
   );

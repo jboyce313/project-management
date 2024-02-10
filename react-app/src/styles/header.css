@@ -26,7 +26,8 @@
   margin: 0;
 }
 
-.logout-link {
+.logout-link,
+.predictLink {
   color: #fff;
   text-decoration: none;
   padding: 8px 16px;
@@ -36,6 +37,12 @@
   transition: transform 0.3s ease;
 }
 
-.logout-link:hover {
+.logout-link:hover,
+.predictLink:hover {
   transform: scale(1.1);
 }
+
+/* .predictLink {
+  text-decoration: none;
+  color: white;
+} */

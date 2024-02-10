@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/task.css";
 
 export function Task({ task, list, setList }) {
-  console.log(task);
+  let [deleted, setDeleted] = useState(1);
   let [status, setStatus] = useState(task.status);
+
+  // useEffect(() => {
+  //   setDeleted(deleted == "one" ? "two" : "one");
+  // }, [list]);
+
   function changeStatus() {
     if (task.status == "in progress") {
       task.status = "completed";
@@ -16,6 +21,13 @@ export function Task({ task, list, setList }) {
       setStatus(task.status);
     }
     setList(list === "one" ? "two" : "one");
+  }
+
+  async function handleClick() {
+    task.status = "deleted";
+    setList(list === "one" ? "two" : "one");
+
+    deleteTask();
   }
 
   async function deleteTask() {
@@ -36,6 +48,7 @@ export function Task({ task, list, setList }) {
 
       const responseData = await response.json();
       console.log(responseData);
+
       return responseData; // Assuming your server responds with some data upon successful login
     } catch (error) {
       console.error("Error deleting task:", error);
@@ -58,7 +71,7 @@ export function Task({ task, list, setList }) {
           <button onClick={changeStatus}>Reopen</button>
         ) : null}
         {localStorage.getItem("isManager") == "true" ? (
-          <button className="delete" onClick={deleteTask}>
+          <button className="delete" onClick={handleClick}>
             Delete
           </button>
         ) : null}

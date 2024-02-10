@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "../styles/createTask.css";
 
 export function CreateTask() {
@@ -9,6 +9,23 @@ export function CreateTask() {
   const [dueDate, setDueDate] = useState("");
   const [estimatedDuration, setEstimatedTime] = useState("");
   const [taskSubmitted, setTaskSubmitted] = useState("false");
+  const [projectName, setProjectName] = useState("");
+
+  useEffect(() => {
+    getProjectName();
+  }, []);
+
+  async function getProjectName() {
+    try {
+      const response = await fetch(`/api/projects/${projectID}`);
+      const data = await response.json();
+      console.log(data);
+      setProjectName(data.name);
+      console.log(projectName);
+    } catch (error) {
+      console.log("Error getting project", error);
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +40,7 @@ export function CreateTask() {
     const newTask = postTask();
     console.log(newTask);
     setTaskSubmitted("true");
+    window.location.href = `/projects/${projectID}`;
   };
 
   async function postTask() {
@@ -57,48 +75,54 @@ export function CreateTask() {
   }
 
   return (
-    <form className="createTaskForm" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="description">Description:</label>
-        <input
-          type="text"
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          required
-        />
-      </div>
-      <div>
-        <label htmlFor="assignee">Assign To:</label>
-        <input
-          type="text"
-          id="assignee"
-          value={assignedTo}
-          onChange={(e) => setAssignee(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="dueDate">Due Date:</label>
-        <input
-          type="date"
-          id="dueDate"
-          value={dueDate}
-          onChange={(e) => setDueDate(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="estimatedTime">Estimated Time:</label>
-        <input
-          type="text"
-          id="estimatedTime"
-          value={estimatedDuration}
-          onChange={(e) => setEstimatedTime(e.target.value)}
-        />
-      </div>
-      <button type="submit">Create Task</button>
-      {/* <p className={taskSubmitted == "true" ? "hidden" : "notHidden"}>
+    <>
+      <form className="createTaskForm" onSubmit={handleSubmit}>
+        <h2>Creating task for {projectName}</h2>
+        <div>
+          <label htmlFor="description">Description:</label>
+          <input
+            type="text"
+            id="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="assignee">Assign To:</label>
+          <input
+            type="text"
+            id="assignee"
+            value={assignedTo}
+            onChange={(e) => setAssignee(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="dueDate">Due Date:</label>
+          <input
+            type="date"
+            id="dueDate"
+            value={dueDate}
+            onChange={(e) => setDueDate(e.target.value)}
+          />
+        </div>
+        <div>
+          <label htmlFor="estimatedTime">Estimated Time:</label>
+          <input
+            type="text"
+            id="estimatedTime"
+            value={estimatedDuration}
+            onChange={(e) => setEstimatedTime(e.target.value)}
+          />
+        </div>
+        <button type="submit">Create Task</button>
+        {/* <p className={taskSubmitted == "true" ? "hidden" : "notHidden"}>
         Task created. You may create another task or return to project screen.
       </p> */}
-    </form>
+      </form>
+      <div className="cancel">
+        <Link to={`/projects/${projectID}`}>Cancel</Link>
+      </div>
+    </>
   );
 }

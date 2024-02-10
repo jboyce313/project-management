@@ -5,13 +5,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 import pickle
+import random
 
 def generate_dummy_data(num_records=1000):
     fake = Faker()
-    team_sizes = [np.random.randint(1, 10) for _ in range(num_records)]
-    budgets = [np.random.randint(10000, 50000) for _ in range(num_records)]
-    workloads = [np.random.randint(1, 10) for _ in range(num_records)]
-    completion_times = [20 * team_size + 10 * budget / workload + np.random.normal(0, 10) for team_size, budget, workload in zip(team_sizes, budgets, workloads)]
+    team_sizes = [np.random.randint(1, 20) for _ in range(num_records)]
+    budgets = [np.random.randint(10000, 1_000_000) for _ in range(num_records)]
+    workloads = [random.randint(1, 3) for _ in range(num_records)]
+    completion_times = [(workload / (team_size + (budget / 50000)) * 10) for team_size, budget, workload in zip(team_sizes, budgets, workloads)]
+
     
     data = {
         'team_size': team_sizes,
@@ -56,11 +58,12 @@ print("Accuracy Percentage:", accuracy_percentage)
 
 # Since the data generated is all random, the predicted data will also be random and inaccurate.
 
-
-# Save the trained model to a file
+'''
+ # Save the trained model to a file
 with open('trained_model.pkl', 'wb') as file:
     pickle.dump(model, file)
 
-# Load the trained model from the file
+ # Load the trained model from the file
 with open('trained_model.pkl', 'rb') as file:
     loaded_model = pickle.load(file)
+'''

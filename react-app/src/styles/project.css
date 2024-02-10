@@ -12,6 +12,10 @@
   justify-content: space-evenly;
 }
 
+.headerAndButton h2 {
+  font-weight: normal;
+}
+
 .projectInfo {
   display: flex;
   justify-content: space-evenly;
@@ -32,18 +36,28 @@
 }
 
 .createTask {
-  background-color: white;
+  background-color: #333;
   border-radius: 4px;
   border: none;
   transition: transform 0.3s ease;
   padding: 5px 8px;
-  margin-right: 10px;
-  margin-left: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-decoration: none;
-  color: black;
+  color: white;
+  border: 1px white solid;
 }
 
 .createTask:hover {
   transform: scale(1.05);
+}
+
+.createTaskDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.createTaskDivContainer {
+  background-color: #333;
 }

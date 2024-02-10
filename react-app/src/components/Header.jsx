@@ -24,7 +24,7 @@ export function Header({
             Project Manager
           </Link>
         </div>
-        {/* <p className="made-by">Made by Aaron & Jacob</p> */}
+        <p className="made-by">Made by Aaron & Jacob</p>
         <div className="nav">
           <Link className={"predictLink"} to={"/predict"}>
             Project Completion Time Predictor

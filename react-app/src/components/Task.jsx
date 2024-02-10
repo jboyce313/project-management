@@ -2,8 +2,13 @@ import { useEffect, useState } from "react";
 import "../styles/task.css";
 
 export function Task({ task, list, setList }) {
-  console.log(task);
+  let [deleted, setDeleted] = useState(1);
   let [status, setStatus] = useState(task.status);
+
+  // useEffect(() => {
+  //   setDeleted(deleted == "one" ? "two" : "one");
+  // }, [list]);
+
   function changeStatus() {
     if (task.status == "in progress") {
       task.status = "completed";
@@ -18,7 +23,8 @@ export function Task({ task, list, setList }) {
     setList(list === "one" ? "two" : "one");
   }
 
-  function handleClick() {
+  async function handleClick() {
+    task.status = "deleted";
     setList(list === "one" ? "two" : "one");
 
     deleteTask();
@@ -42,8 +48,6 @@ export function Task({ task, list, setList }) {
 
       const responseData = await response.json();
       console.log(responseData);
-      console.log("Before setList:", list);
-      console.log("After setList:", list);
 
       return responseData; // Assuming your server responds with some data upon successful login
     } catch (error) {

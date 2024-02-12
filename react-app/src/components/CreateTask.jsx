@@ -84,6 +84,7 @@ export function CreateTask() {
             type="text"
             id="description"
             value={description}
+            autoComplete="off"
             onChange={(e) => setDescription(e.target.value)}
             required
           />

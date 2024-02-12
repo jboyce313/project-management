@@ -61,17 +61,25 @@ export function Task({ task, list, setList }) {
       <div className="task">
         <p>{task.description}</p>
 
-        {!task.status ? <button onClick={changeStatus}>Start</button> : null}
+        {!task.status ? (
+          <button className="moveTask" onClick={changeStatus}>
+            Start
+          </button>
+        ) : null}
 
         {task.status == "in progress" ? (
-          <button onClick={changeStatus}>Mark Complete</button>
+          <button className="moveTask" onClick={changeStatus}>
+            Mark Complete
+          </button>
         ) : null}
 
         {task.status == "completed" ? (
-          <button onClick={changeStatus}>Reopen</button>
+          <button className="moveTask" onClick={changeStatus}>
+            Reopen
+          </button>
         ) : null}
         {localStorage.getItem("isManager") == "true" ? (
-          <button className="delete" onClick={handleClick}>
+          <button className="edit" onClick={handleClick}>
             Delete
           </button>
         ) : null}

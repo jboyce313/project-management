@@ -95,6 +95,7 @@ export function CreateTask() {
             type="text"
             id="assignee"
             value={assignedTo}
+            autoComplete="off"
             onChange={(e) => setAssignee(e.target.value)}
           />
         </div>
@@ -113,6 +114,7 @@ export function CreateTask() {
             type="text"
             id="estimatedTime"
             value={estimatedDuration}
+            autoComplete="off"
             onChange={(e) => setEstimatedTime(e.target.value)}
           />
         </div>

@@ -33,7 +33,7 @@ export function PredictCompleteTime() {
 
   return (
     <div className="predictionFormContainer">
-      <h2>Predict Completion Time</h2>
+      <h2>Predict Project Completion Time</h2>
       <div className="predictionForm">
         <div>
           <label>Team Size:</label>
@@ -65,7 +65,7 @@ export function PredictCompleteTime() {
             onChange={(e) => setWorkLoad(e.target.value)}
           />
         </div>
-        <button onClick={handlePredict}>Predict Completion Time</button>
+        <button onClick={handlePredict}>Predict</button>
         {predictedCompletionTime && (
           <p className="predictedTime">
             Predicted Completion Time: {predictedCompletionTime}

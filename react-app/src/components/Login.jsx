@@ -54,6 +54,7 @@ export function Login({ setUser, setLoggedIn, setIsManager, isManager }) {
           type="text"
           id="username"
           value={username}
+          autoComplete="off"
           onChange={handleUsernameChange}
           required
         />

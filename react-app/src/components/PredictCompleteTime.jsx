@@ -32,42 +32,46 @@ export function PredictCompleteTime() {
   };
 
   return (
-    <div className="predictionForm">
+    <div className="predictionFormContainer">
       <h2>Predict Completion Time</h2>
-      <div>
-        <label>Team Size:</label>
-        <input
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]*"
-          value={teamSize}
-          onChange={(e) => setTeamSize(e.target.value)}
-        />
+      <div className="predictionForm">
+        <div>
+          <label>Team Size:</label>
+          <input
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            value={teamSize}
+            onChange={(e) => setTeamSize(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Budget:</label>
+          <input
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+          />
+        </div>
+        <div>
+          <label>Workload:</label>
+          <input
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            value={workload}
+            onChange={(e) => setWorkLoad(e.target.value)}
+          />
+        </div>
+        <button onClick={handlePredict}>Predict Completion Time</button>
+        {predictedCompletionTime && (
+          <p className="predictedTime">
+            Predicted Completion Time: {predictedCompletionTime}
+          </p>
+        )}
       </div>
-      <div>
-        <label>Budget:</label>
-        <input
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]*"
-          value={budget}
-          onChange={(e) => setBudget(e.target.value)}
-        />
-      </div>
-      <div>
-        <label>Workload:</label>
-        <input
-          type="text"
-          inputMode="numeric"
-          pattern="[0-9]*"
-          value={workload}
-          onChange={(e) => setWorkLoad(e.target.value)}
-        />
-      </div>
-      <button onClick={handlePredict}>Predict Completion Time</button>
-      {predictedCompletionTime && (
-        <p>Predicted Completion Time: {predictedCompletionTime}</p>
-      )}
     </div>
   );
 }

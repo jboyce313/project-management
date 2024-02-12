@@ -53,8 +53,8 @@ export function CreateProject() {
   };
 
   return (
-    <div className="createProject">
-      <h2>Create Project</h2>
+    <div className="createProjectForm">
+      <h2>Enter Project Details:</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
@@ -101,7 +101,9 @@ export function CreateProject() {
           />
         </label>
         <br />
-        <button type="submit">Create Project</button>
+        <button className="submitProject" type="submit">
+          Create Project
+        </button>
       </form>
     </div>
   );

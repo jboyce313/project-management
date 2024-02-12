@@ -1,5 +1,38 @@
-.createProject {
+.createProjectForm {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.createProjectForm h2 {
+  margin: 30px;
+}
+
+.createProjectForm form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.createProjectForm form label {
+  display: flex;
+  width: 20%;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.submitProject {
+  margin-top: 20px;
+  padding: 8px;
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.submitProject:hover {
+  transform: scale(1.05);
 }
